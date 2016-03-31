@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:layout_gravity="left|start"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ab8e67"
+        android:clickable="true"
+        android:paddingLeft="16dp"
+        android:paddingTop="80dp">
+
+        <TextView
+            android:id="@+id/tv_ma_navigation_other_tab"
+            style="@style/NavigationTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_alignParentTop="true"
+            android:drawableLeft="@drawable/ic_action_collection"
+            android:text="@string/nd_tv_title_practice" />
+
+
+        <TextView
+            android:id="@+id/tv_ma_navigation_auto_speak"
+            style="@style/NavigationTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_below="@id/tv_ma_navigation_other_tab"
+            android:drawableLeft="@drawable/ic_action_forward"
+            android:text="Auto Speak" />
+
+
+        <TextView
+            android:id="@+id/tv_ma_navigation_keyboard"
+            style="@style/NavigationTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_below="@id/tv_ma_navigation_auto_speak"
+            android:drawableLeft="@drawable/ic_action_keyboard"
+            android:text="Keep Keyboard" />
+
+        <TextView
+            android:id="@+id/tv_ma_navigation_mail"
+            style="@style/NavigationTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_below="@id/tv_ma_navigation_keyboard"
+            android:drawableLeft="@drawable/ic_action_email"
+            android:text="Email or SMS" />
+
+        <TextView
+            android:id="@+id/tv_ma_navigation_random"
+            style="@style/NavigationTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_below="@id/tv_ma_navigation_mail"
+            android:drawableLeft="@drawable/ic_action_repeat"
+            android:text="Random and Quick" />
+
+        <TextView
+            android:id="@+id/tv_nd_edit_dictionary"
+            style="@style/NavigationTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_below="@id/tv_ma_navigation_random"
+            android:drawableLeft="@drawable/ic_action_storage"
+            android:text="Edit Dictionary" />
+
+        <TextView
+            android:id="@+id/tv_ma_navigation_settings"
+            style="@style/NavigationTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_below="@id/tv_nd_edit_dictionary"
+            android:drawableLeft="@drawable/ic_action_settings"
+            android:text="Settings" />
+
+    </RelativeLayout>
+</ScrollView>

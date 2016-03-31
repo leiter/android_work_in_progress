@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--item
+        android:id="@+id/action_play_animation"
+        android:icon="@drawable/ic_menu_view"
+        android:title="Start Animation"
+        app:showAsAction="always" /-->
+
+    <item
+        android:id="@+id/action_show_list"
+        android:icon="@drawable/ic_menu_add"
+        android:title="Show list of things"
+        app:showAsAction="always" />
+
+    <!--item
+        android:id="@+id/action_flip_now"
+        android:icon="@android:drawable/ic_dialog_info"
+        android:title="Start Yes or No"
+        app:showAsAction="always" /-->
+
+
+</menu>

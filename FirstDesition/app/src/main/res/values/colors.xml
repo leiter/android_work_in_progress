@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="blue">#1a7bd8</color>
+    <color name="orange">#f1b50d</color>
+    <color name="orange_background">#f6b50d</color>
+    <color name="cherry_red">#da1a7b</color>
+    <color name="yellow">#f2ff1e</color>
+    <color name="green">#69e600</color>
+    <color name="brown">#bd671b</color>
+
+    <color name="transparent">@android:color/transparent</color>
+
+
+
+    <!-- Bubble colors -->
+    <color name="bubble_solid">#ff5544</color>
+    <color name="bubble_start">#aaFF5252</color>
+    <color name="bubble_end">#aaFF9800</color>
+
+    <color name="bubble_result_solid">#FFCDDC39</color>
+    <color name="bubble_result_start">#aaCFDC39</color>
+    <color name="bubble_result_end">#aa8BC3ff</color>
+
+    <!-- Theme colors -->
+
+    <color name="primary_text_color">#fff</color>
+
+</resources>

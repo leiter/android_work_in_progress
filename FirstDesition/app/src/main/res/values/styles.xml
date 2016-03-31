@@ -1,0 +1,162 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!--<item name="android:elevation">0dp</item>-->
+        <item name="android:windowBackground">@color/orange</item>
+
+        <item name="android:textColor">@color/brown</item>
+        <item name="android:textColorPrimary">@color/brown</item>
+
+
+        <!--<item name="android:actionModeBackground">@drawable/dummy_pig</item>-->
+        <!--<item name="actionModeBackground">@drawable/dummy_pig</item>-->
+
+        <!-- ACTIONBAR-->
+
+        <item name="android:actionBarSize">64dp</item>
+        <item name="android:actionBarItemBackground">@null</item>
+        <item name="android:actionButtonStyle">@null</item>
+        <item name="actionBarItemBackground">@null</item>
+        <item name="actionBarSize">64dp</item>
+        <item name="actionButtonStyle">@null</item>
+
+
+        <item name="android:actionBarStyle">@style/ActionBar</item>
+        <item name="actionBarStyle">@style/ActionBar</item>
+
+        <!-- POPUPMENU-->
+        <item name="actionOverflowMenuStyle">@style/MyPopupMenu</item>
+        <item name="android:popupMenuStyle">@style/MyPopupMenu</item>
+        <item name="popupMenuStyle">@style/MyPopupMenu</item>
+        <item name="android:itemTextAppearance">@style/TextAppearancePopup</item>
+
+    </style>
+
+    <style name="AppBubbles" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:textColor">@color/brown</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:gravity">center</item>
+
+    </style>
+
+    <style name="MyPopupMenu" parent="Widget.AppCompat.Light.ListView.DropDown">
+        <item name="android:layout_marginTop">?attr/actionBarSize</item>
+        <item name="android:popupBackground">@color/orange</item>
+
+
+    </style>
+    <!-- Popup Menu Text Color styles -->
+    <style name="TextAppearancePopup">
+        <!--<item name="android:textColor">@color/cherry_red</item>-->
+        <item name="android:textSize">24dp</item>
+    </style>
+
+
+    <style name="AppAddDialog" parent="Widget.AppCompat.ButtonBar.AlertDialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+
+    <style name="ActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <!--<item name="android:paddingLeft">4dp</item>-->
+        <!--<item name="android:paddingRight">48dp</item>-->
+        <!--<item name="android:layout_margin">0dp</item>-->
+
+    </style>
+
+
+    <!--Generated AppThem-->
+    <!--style name="Theme.Newapptheme" parent="@style/Theme.AppCompat.Light">
+        <item name="actionBarItemBackground">@drawable/selectable_background_newapptheme</item>
+        <item name="popupMenuStyle">@style/PopupMenu.Newapptheme</item>
+        <item name="dropDownListViewStyle">@style/DropDownListView.Newapptheme</item>
+        <item name="actionBarTabStyle">@style/ActionBarTabStyle.Newapptheme</item>
+        <item name="actionDropDownStyle">@style/DropDownNav.Newapptheme</item>
+        <item name="actionBarStyle">@style/ActionBar.Solid.Newapptheme</item>
+        <item name="actionModeBackground">@drawable/cab_background_top_newapptheme</item>
+        <item name="actionModeSplitBackground">@drawable/cab_background_bottom_newapptheme</item>
+        <item name="actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Newapptheme</item>
+
+
+    </style>
+
+    <style name="ActionBar.Solid.Newapptheme" parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
+        <item name="background">@drawable/ab_solid_newapptheme</item>
+        <item name="backgroundStacked">@drawable/ab_stacked_solid_newapptheme</item>
+        <item name="backgroundSplit">@drawable/ab_bottom_solid_newapptheme</item>
+        <item name="progressBarStyle">@style/ProgressBar.Newapptheme</item>
+    </style>
+
+    <style name="ActionBar.Transparent.Newapptheme" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="background">@drawable/ab_transparent_newapptheme</item>
+        <item name="progressBarStyle">@style/ProgressBar.Newapptheme</item>
+    </style>
+
+    <style name="PopupMenu.Newapptheme" parent="@style/Widget.AppCompat.Light.PopupMenu">
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_newapptheme</item>
+    </style>
+
+    <style name="DropDownListView.Newapptheme" parent="@style/Widget.AppCompat.Light.ListView.DropDown">
+        <item name="android:listSelector">@drawable/selectable_background_newapptheme</item>
+    </style>
+
+    <style name="ActionBarTabStyle.Newapptheme" parent="@style/Widget.AppCompat.Light.ActionBar.TabView">
+        <item name="android:background">@drawable/tab_indicator_ab_newapptheme</item>
+    </style>
+
+    <style name="DropDownNav.Newapptheme" parent="@style/Widget.AppCompat.Light.Spinner.DropDown.ActionBar">
+        <item name="android:background">@drawable/spinner_background_ab_newapptheme</item>
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_newapptheme</item>
+        <item name="android:dropDownSelector">@drawable/selectable_background_newapptheme</item>
+    </style>
+
+    <style name="ProgressBar.Newapptheme" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_horizontal_newapptheme</item>
+    </style>
+
+    <style name="ActionButton.CloseMode.Newapptheme" parent="@style/Widget.AppCompat.Light.ActionButton.CloseMode">
+        <item name="android:background">@drawable/btn_cab_done_newapptheme</item>
+    </style>
+
+
+
+    < this style is only referenced in a Light.DarkActionBar based theme >
+    <style name="Theme.Newapptheme.Widget" parent="@style/Theme.AppCompat">
+        <item name="popupMenuStyle">@style/PopupMenu.Newapptheme</item>
+        <item name="dropDownListViewStyle">@style/DropDownListView.Newapptheme</item>
+    </style-->
+
+
+    <!-- UNUSED -->
+    <style name="NavigationTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">#0000ff</item>
+        <item name="android:textAppearance">
+            @style/TextAppearance.AppCompat.Light.SearchResult.Title
+        </item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:drawablePadding">16dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ListCompoundButton" parent="Base.Widget.AppCompat.CompoundButton.CheckBox">
+
+    </style>
+
+
+</resources>

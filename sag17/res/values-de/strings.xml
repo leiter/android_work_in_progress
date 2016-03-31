@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Sag Mal</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="tab_title_1">Fragen</string>
+    <string name="tab_title_2">Üben</string>
+    <string name="translate">übersetzen</string>
+    <string name="save">speichern</string>
+    <string name="clear">leeren</string>
+    <string name="listen">einsprechen</string>
+    <string name="speak">vorlesen</string>
+    <string name="quiztest">Quiz</string>
+    <string name="speaktest">Sprich</string>
+    <string name="listentest">Höre</string>
+    <string name="showPastBoard">Zwischenspeicher</string>
+    <string name="voiceregognition">Spracherkennungsdienst &#8230; </string>
+
+</resources>

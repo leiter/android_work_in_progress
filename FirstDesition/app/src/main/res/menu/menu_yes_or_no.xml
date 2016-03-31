@@ -1,0 +1,47 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.android.marco.firstdecision.activities.YesOrNoActivity">
+    <item
+        android:id="@+id/empty"
+        android:icon="@drawable/abc_ic_menu_moreoverflow_mtrl_alpha"
+        android:orderInCategory="101"
+        android:title="Menu item to open menu"
+        app:showAsAction="always">
+
+        <menu>
+
+            <item
+                android:id="@+id/action_go_flip"
+                android:checkable="true"
+                android:checked="true"
+                android:icon="@drawable/ic_menu_forward"
+                android:orderInCategory="100"
+                android:title="Disable auto start"
+                app:background="@color/green"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_use_touch_gestures"
+                android:icon="@drawable/ic_menu_forward"
+                android:orderInCategory="100"
+                android:title="Choose Flip images"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_hide_or_show_ab"
+                android:icon="@drawable/ic_menu_forward"
+                android:orderInCategory="100"
+                android:title="Hide ActionBar"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_settings"
+                android:icon="@drawable/ic_settings"
+                android:orderInCategory="100"
+                android:title="@string/action_settings"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+
+</menu>

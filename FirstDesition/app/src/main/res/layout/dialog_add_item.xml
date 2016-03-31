@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/accent_material_light">
+
+    <ImageButton
+        android:id="@+id/bnt_ma_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@android:drawable/ic_menu_add" />
+
+    <EditText
+        android:id="@+id/et_ma_set_hobby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/bnt_ma_add"
+
+        android:paddingLeft="12dp"
+        android:singleLine="true">
+
+        <requestFocus />
+    </EditText>
+
+
+    <!--TextView
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle"
+        android:layout_above="@id/bnt_ma_add"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add something to your hobbies!"
+        android:id="@+id/tv_ma_title"
+        android:layout_gravity="center_horizontal" /-->
+
+</RelativeLayout>

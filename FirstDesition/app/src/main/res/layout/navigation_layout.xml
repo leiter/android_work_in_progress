@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="left|start"
+    android:layout_marginTop="120dp">
+
+    <TextView
+        android:id="@+id/tv_navigation_yes_or_no"
+        style="@style/NavigationTextViewStyle"
+        android:layout_alignParentTop="true"
+        android:background="@color/blue"
+        android:text="@string/yes_or_no" />
+
+
+    <TextView
+        android:id="@+id/tv_navigation_one_of_many"
+        style="@style/NavigationTextViewStyle"
+        android:layout_below="@id/tv_navigation_yes_or_no"
+        android:background="@color/orange"
+        android:text="@string/one_of_many" />
+
+
+    <TextView
+        android:id="@+id/tv_ma_navigation_keyboard"
+        style="@style/NavigationTextViewStyle"
+        android:layout_below="@id/tv_navigation_one_of_many"
+        android:background="@color/cherry_red"
+        android:text="@string/anything" />
+
+    <TextView
+        android:id="@+id/tv_navigation_lets_see"
+        style="@style/NavigationTextViewStyle"
+        android:layout_below="@id/tv_ma_navigation_keyboard"
+        android:background="@color/yellow"
+        android:text="@string/let_s_see" />
+
+    <TextView
+        android:id="@+id/tv_navigation_settings"
+        style="@style/NavigationTextViewStyle"
+        android:layout_below="@id/tv_navigation_lets_see"
+        android:background="@color/green"
+        android:text="@string/settings" />
+
+    <TextView
+        android:id="@+id/tv_navigation_about"
+        style="@style/NavigationTextViewStyle"
+        android:layout_below="@id/tv_navigation_settings"
+        android:background="@color/brown"
+        android:text="@string/about" />
+
+
+</RelativeLayout>

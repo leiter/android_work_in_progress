@@ -1,0 +1,10 @@
+<resources>
+
+    <color name="yellow" >#F7DC88</color>
+    <color name="brown" >#FFFEAA</color>
+    <color name="green_light">#85FF5E</color>
+    <color name="green_bright">#3DFF00</color>
+    <color name="yellow_bright">#FFF500</color>
+    <color name="yellow_light">#FFFFC3</color>
+
+</resources>

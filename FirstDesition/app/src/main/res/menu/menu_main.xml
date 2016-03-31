@@ -1,0 +1,53 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/empty"
+        android:icon="@drawable/abc_ic_menu_moreoverflow_mtrl_alpha"
+        android:orderInCategory="101"
+        android:title="Item to open menu"
+        app:showAsAction="always">
+
+        <menu>
+
+            <item
+                android:id="@+id/action_go_flip"
+                android:icon="@android:drawable/ic_dialog_info"
+                android:orderInCategory="100"
+                android:title="Listen ordnen"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_use_touch_gestures"
+                android:icon="@android:drawable/ic_dialog_info"
+                android:orderInCategory="100"
+                android:title="LOAD LIST"
+                app:showAsAction="never" />
+
+
+            <item
+                android:id="@+id/action_hide_or_show_ab"
+                android:icon="@android:drawable/ic_dialog_info"
+                android:orderInCategory="100"
+                android:title="App bewerten"
+                app:showAsAction="never" />
+
+
+            <item
+                android:id="@+id/action_settings"
+                android:icon="@android:drawable/ic_dialog_info"
+                android:orderInCategory="100"
+                android:title="Settings"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_about"
+                android:icon="@android:drawable/ic_dialog_info"
+                android:orderInCategory="100"
+                android:title="Info"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+</menu>

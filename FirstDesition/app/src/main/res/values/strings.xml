@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">First Decision</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_yes_or_no">YesOrNoActivity</string>
+
+    <string name="yes_or_no">Yes or No</string>
+    <string name="one_of_many">One of many</string>
+    <string name="anything">Anything</string>
+    <string name="let_s_see">Let\'s see</string>
+    <string name="settings">Settings</string>
+    <string name="about">Info</string>
+
+    <string-array name="things_evening">
+
+        <item name="thing_title">Cinema</item>
+        <item name="thing_cinema">Cinema</item>
+        <item name="thing_theatre">Theatre</item>
+        <item name="thing_music">Music</item>
+        <item name="thing_sports">Sports</item>
+    </string-array>
+
+    <string-array name="things_friend">
+
+        <item name="thing_title">Peter</item>
+        <item name="thing_friend">Peter</item>
+        <item name="thing_friend">Jane</item>
+        <item name="thing_frined">Mary</item>
+        <item name="thing_friend">Herbert</item>
+    </string-array>
+
+
+    <string name="title_activity_tryout">TryoutActivity</string>
+
+</resources>

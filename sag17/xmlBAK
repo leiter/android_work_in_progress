@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_margin="15dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:id="@+id/saveme"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@null"
+            android:drawableTop="@android:drawable/ic_menu_save"
+            android:onClick="saveToDB"
+            android:text="@string/save" />
+
+        <Button
+            android:id="@+id/android_speak2"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/saveme"
+            android:background="@null"
+            android:drawableTop="@android:drawable/ic_media_play"
+            android:onClick="speakNow"
+            android:text="tell me" />
+
+        <Button
+            android:id="@+id/android_listens"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/android_speak2"
+            android:background="@null"
+            android:drawableTop="@android:drawable/ic_menu_more"
+            android:onClick="listenButtonClicked"
+            android:text="listen" />
+
+        <Button
+            android:id="@+id/clear"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/android_listens"
+            android:background="@null"
+            android:drawableTop="@android:drawable/ic_menu_edit"
+            android:onClick="clearTextFieldInFocus"
+            android:text="edit" />
+
+        <Button
+            android:id="@+id/translate"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/clear"
+            android:background="@null"
+            android:drawableTop="@android:drawable/ic_menu_search"
+            android:onClick="getTranslation"
+            android:text="@string/translate" />
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/saveme"
+            android:text="CheckBox2"
+            android:textSize="10sp" />
+    </RelativeLayout>
+
+    <ToggleButton
+        android:id="@+id/keepSttList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ToggleButton" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="200dp"
+                android:minWidth="100dp"
+                android:text="Buttonn nnnnnn nnnnnnnnnnnnnnnnnnn nnnnnnnnnnnn nnnnnnnnn" />
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/answer1"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="5dp"
+                android:text="sddddddddddddddddddddddddddddsdf"
+                android:background="@drawable/save_button"
+                android:onClick="respondToGuess" />
+
+            <Button
+                android:id="@+id/answer2"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/save_button"
+                android:onClick="respondToGuess" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/answer3"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/save_button"
+                android:onClick="respondToGuess" />
+
+            <Button
+                android:id="@+id/answer4"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/save_button"
+                android:onClick="respondToGuess" />
+        </TableRow>
+    </TableLayout>
+
+    
+
+</LinearLayout>
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2890F7" >
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="40sp" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/question" >
+
+        <Button
+            android:id="@+id/answer3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/answer1"
+            android:layout_below="@+id/answer1"
+            android:layout_marginTop="32dp"
+            android:minWidth="150dp"
+            android:onClick="respondToGuess" />
+
+        <Button
+            android:id="@+id/answer4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/answer3"
+            android:layout_alignBottom="@id/answer3"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:minWidth="150dp"
+            android:onClick="respondToGuess" />
+
+        <Button
+            android:id="@+id/answer1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="26dp"
+            android:minWidth="150dp"
+            android:onClick="respondToGuess" />
+
+        <Button
+            android:id="@+id/answer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/answer1"
+            android:layout_alignBottom="@id/answer1"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:minWidth="150dp"
+            android:onClick="respondToGuess" />
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/answer3"
+            android:layout_below="@id/answer3"
+            android:layout_margin="15dp"
+            android:gravity="center"
+            android:minWidth="800dp" >
+
+            <Button
+                android:id="@+id/change"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="2dp"
+                android:drawableTop="@android:drawable/stat_notify_sync"
+                android:text="tauschen" />
+
+            <Button
+                android:id="@+id/next"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@android:drawable/ic_media_next"
+                android:text="nächste" />
+
+            <Button
+                android:id="@+id/delete"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@android:drawable/ic_input_delete"
+                android:text="löschen" />
+
+            <ToggleButton
+                android:id="@+id/keepSttList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="list" />
+
+            <ToggleButton
+                android:id="@+id/getWebView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="webView" />
+        </TableRow>
+    </RelativeLayout>
+
+    
+
+</RelativeLayout>

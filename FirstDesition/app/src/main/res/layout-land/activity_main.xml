@@ -1,0 +1,92 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/my_center"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_centerInParent="true" />
+
+    <Button
+        android:id="@+id/btn_ma_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/bubble_result"
+        android:padding="24dp"
+        android:visibility="invisible" />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/myFAB_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:onClick="onClick"
+        android:src="@drawable/ic_menu_view"
+        app:backgroundTint="@color/brown"
+        app:borderWidth="0dp"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        app:rippleColor="@color/blue" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/myFAB_left0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:longClickable="true"
+        android:onClick="onClick"
+        android:src="@android:drawable/ic_menu_mylocation"
+        app:backgroundTint="@color/brown"
+        app:borderWidth="0dp"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        app:rippleColor="@color/blue" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/myFAB_middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:longClickable="true"
+        android:onClick="onClick"
+        android:src="@android:drawable/ic_menu_edit"
+        android:visibility="gone"
+        app:backgroundTint="@color/brown"
+        app:borderWidth="0dp"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        app:rippleColor="@color/blue" />
+
+    <LinearLayout
+        android:id="@+id/list_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/myFAB_right"
+        android:orientation="vertical" />
+
+
+</RelativeLayout>

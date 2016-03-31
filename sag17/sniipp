@@ -1,0 +1,180 @@
+
+^(?!.*(nativeGetEnabledTags)).*$
+
+?android:attr/textAppearanceLarge  simple_tab
+
+<padding
+                android:left="4dp"
+                android:top="4dp"
+                android:right="4dp"
+                android:bottom="4dp" />
+####################
+
+	public String concatURL() {		
+		String baseURL = "http://syslang.com/frengly/controller?action=translate"
+								+ "REST&email=marcoleiter%40arcor.de"
+								+ "&password=myloginforhere&" ;
+		String getURl = null;
+		if (txtText.getText().length() != 0) {
+			String question = txtText.getText().toString().replace("\n", " ").replace(" ", "+");
+			getURl = baseURL + "src=de"   +  "&dest=en" + "&text=" + question ; }
+		Log.d("UURRRRLL", getURl);
+		return getURl;
+	}
+	
+	private void progress() {
+//		pro = ProgressDialog.show(this, 
+//				"Bitte warten...", "Die Daten werden geholt",true);
+//		pro.setCancelable(true);
+	}
+	
+	public void getAnswer(View view) {
+		fetchData();
+//		view.setEnabled(false);
+//		progress();
+//		postData();
+	}
+	
+	private static Handler handler = new Handler() {
+		
+		public void handleMessage (Message msg) {
+			Log.d("hallo hier handler", "msg  1");
+			Bundle bundle =msg.getData();
+			String htmlStr = bundle.getString("htmlkey");
+			Log.d("hallo hier handler", htmlStr);
+			ttxText.setText(htmlStr);
+//			setGetTranslation();
+//			pro.dismiss();
+		}
+	};	
+		
+	public void fetchData() {
+		
+		Runnable r = new Runnable(){		
+			@Override
+			public void run() {				
+				HttpGet request = new HttpGet();
+				HttpClient client = new DefaultHttpClient();	
+				request.setHeader("User-Agent",System.getProperty("http.agent"));
+				BufferedReader bufferIn = null;
+				Document doc = null;				
+				DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();	
+				
+				try {
+
+					request.setURI(new URI(concatURL()));
+					HttpResponse response = client.execute(request);					
+					bufferIn = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));					
+					StringBuffer stringBuffer = new StringBuffer("");
+					String line="";
+					String NL = System.getProperty("line.separator");					
+					while ((line=bufferIn.readLine()) != null) {
+						stringBuffer.append(line+NL);			}
+					
+					DocumentBuilder db = dbf.newDocumentBuilder();				 
+		            InputSource is = new InputSource();
+		            is.setCharacterStream(new StringReader(stringBuffer.toString()));
+		            doc = db.parse(is); 													//.getNodeName()
+//		            Log.d("AUSGABE: des TRY statement", doc.getChildNodes().item(0).getChildNodes().item(3).getTextContent());   	            
+		            String answer = doc.getChildNodes().item(0).getChildNodes().item(3).getTextContent().toString();
+					Message msg = handler.obtainMessage();
+					Bundle bundle = new Bundle();
+					bundle.putString("htmlkey", answer); // answer  stringBuffer.toString()
+					msg.setData(bundle);					
+					handler.sendMessage(msg);
+					
+				} catch (MalformedURLException e) {
+					Log.d(TAG,"MalformedURLException");
+					e.printStackTrace();
+				} catch (IOException e) {
+					Log.d(TAG,"IOException");
+					e.printStackTrace();
+				} catch (ParserConfigurationException e) {
+					Log.d(TAG,"ParserConfigurationException");
+					e.printStackTrace();
+				} catch (URISyntaxException e) {
+					Log.d(TAG,"URISyntaxException");
+					e.printStackTrace();
+				} catch (SAXException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} finally {
+					
+					if(bufferIn != null)
+						try {
+							bufferIn.close();
+						} catch (IOException e)    {
+							e.printStackTrace();   }
+				}			
+			}			
+		};					(new Thread(r)).start();	
+	}
+
+
+
+################
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.sag17.MainActivity$PlaceholderFragment" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:textSize="32sp"
+        android:text="Text to Speech" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp"
+        android:ems="10" >
+
+       
+    </EditText>
+
+    <Button
+        android:id="@+id/button1"
+        android:onClick="speakOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"        
+        android:text="Speak" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_below="@+id/editText2"
+        android:layout_marginTop="33dp"
+        android:text="Speak" />
+
+</RelativeLayout>

@@ -1,0 +1,85 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_ma_tab_1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/et_ma_input_1"
+        style="@style/AppEditTextRow" />
+
+    <Spinner
+        android:id="@+id/sp_ma_lang_selector"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:clickable="true"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/et_ma_input_2"
+        style="@style/AppEditTextRow" />
+
+    <HorizontalScrollView
+        android:id="@+id/hs_ma_buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_margin="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingLeft="120dp"
+            android:paddingRight="120dp">
+
+            <Button
+                android:id="@+id/btn_ma_savetodb"
+                style="@style/AppButtonStyleMost"
+                android:drawableTop="@drawable/ic_action_new"
+
+                android:text="@string/save" />
+
+            <Button
+                android:id="@+id/btn_ma_read"
+                style="@style/AppButtonStyleMost"
+                android:drawableTop="@drawable/ic_action_play"
+                android:onClick="speakNow"
+                android:text="@string/speak" />
+
+            <Button
+                android:id="@+id/btn_ma_speech_input"
+                style="@style/AppButtonStyleMost"
+                android:drawableTop="@drawable/ic_action_mic"
+                android:onClick="listenButtonClicked"
+                android:text="@string/listen" />
+
+            <Button
+                android:id="@+id/btn_ma_translate"
+                style="@style/AppButtonStyleMost"
+                android:drawableTop="@drawable/ic_action_search"
+                android:onClick="getTranslationButton"
+                android:text="@string/translate" />
+
+            <Button
+                android:id="@+id/btn_ma_cancel"
+                style="@style/AppButtonStyleMost"
+                android:drawableTop="@drawable/ic_action_cancel"
+                android:onClick="clearTextFieldInFocus"
+                android:text="@string/clear" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ListView
+        android:id="@+id/lv_ma_results"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+</LinearLayout>

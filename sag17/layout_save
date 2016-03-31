@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical" >
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <LinearLayout
+                android:id="@+id/tab1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/r"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp" >
+
+                    <ImageButton
+                        android:id="@+id/flag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dp"
+                        android:background="@null"
+                        android:onClick="langSelector2" />
+
+                    <EditText
+                        android:id="@+id/input"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/flag"
+                        android:inputType="textMultiLine"
+                        android:maxLines="2"
+                        android:scrollbars="vertical" />
+                </RelativeLayout>
+
+                <Spinner
+                    android:id="@+id/testspinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:clickable="true"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/t"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp" >
+
+                    <ImageButton
+                        android:id="@+id/flag2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dp"
+                        android:background="@null"
+                        android:onClick="langSelector2" />
+
+                    <EditText
+                        android:id="@+id/input2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/flag2"
+                        android:inputType="textMultiLine"
+                        android:maxLines="2"
+                        android:scrollbars="vertical" />
+                </RelativeLayout>
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_margin="5dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:paddingLeft="120dp"
+                        android:paddingRight="120dp" >
+
+                        <Button
+                            android:id="@+id/saveme"
+                            style="?android:attr/buttonStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/my_button"
+                            android:drawableTop="@android:drawable/ic_menu_save"
+                            android:onClick="saveToDB"
+                            android:text="@string/save" />
+
+                        <Button
+                            android:id="@+id/android_speak"
+                            style="?android:attr/buttonStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/my_button"
+                            android:drawableTop="@android:drawable/ic_media_play"
+                            android:onClick="speakNow"
+                            android:text="@string/speak" />
+
+                        <Button
+                            android:id="@+id/android_listen"
+                            style="?android:attr/buttonStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/my_button"
+                            android:drawableTop="@android:drawable/ic_btn_speak_now"
+                            android:onClick="listenButtonClicked"
+                            android:text="@string/listen" />
+
+                        <Button
+                            android:id="@+id/clear"
+                            style="?android:attr/buttonStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/my_button"
+                            android:drawableTop="@android:drawable/ic_menu_edit"
+                            android:onClick="clearTextFieldInFocus"
+                            android:text="@string/clear" />
+
+                        <Button
+                            android:id="@+id/translate"
+                            style="?android:attr/buttonStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/my_button"
+                            android:drawableTop="@android:drawable/ic_menu_search"
+                            android:onClick="getTranslation"
+                            android:text="@string/translate" />
+
+                        <ToggleButton
+                            android:id="@+id/keepSttList"
+                            style="?android:attr/buttonStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/my_button"
+                            android:checked="true"
+                            android:drawableTop="@android:drawable/ic_menu_more"
+                            android:textOff="List OFF"
+                            android:textOn="List ON  "
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <ListView
+                    android:id="@+id/list"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tab2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/question"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/answer1"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/save_button"
+                        android:onClick="respondToGuess" />
+
+                    <Button
+                        android:id="@+id/answer2"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                       	android:layout_marginLeft="5dp"
+                       	android:layout_marginBottom="8dp"
+                        android:background="@drawable/save_button"
+                        android:onClick="respondToGuess" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/answer3"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/save_button"
+                        android:onClick="respondToGuess" />
+
+                    <Button
+                        android:id="@+id/answer4"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/save_button"
+                        android:onClick="respondToGuess" />
+                </LinearLayout>
+
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    android:minWidth="800dp" >
+                    
+                    <Button
+                        android:id="@+id/quizteller"
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/my_button"
+                        android:drawableTop="@android:drawable/ic_media_play"
+                        android:text="sag mal" />
+
+                    <Button
+                        android:id="@+id/change"
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/my_button"
+                        android:drawableTop="@android:drawable/stat_notify_sync"
+                        android:onClick="changeQuestionDirection"
+                        android:text="tauschen" />
+
+                    <Button
+                        android:id="@+id/next"
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/my_button"
+                        android:drawableTop="@android:drawable/ic_media_next"
+                        android:onClick="postQuiz"
+                        android:text="weiter" />
+
+                    
+                </TableRow>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</TabHost>
+
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical" >
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <LinearLayout
+                android:id="@+id/tab1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/r"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp" >
+
+                    <ImageButton
+                        android:id="@+id/flag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dp"
+                        android:background="@null"
+                        android:onClick="langSelector2" />
+
+                    <EditText
+                        android:id="@+id/input"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/flag"
+                        android:inputType="textMultiLine"
+                        android:maxLines="2"
+                        android:scrollbars="vertical" />
+                </RelativeLayout>
+
+                <Spinner
+                    android:id="@+id/testspinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:clickable="true"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/t"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp" >
+
+                    <ImageButton
+                        android:id="@+id/flag2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dp"
+                        android:background="@null"
+                        android:onClick="langSelector2" />
+
+                    <EditText
+                        android:id="@+id/input2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/flag2"
+                        android:inputType="textMultiLine"
+                        android:maxLines="2"
+                        android:scrollbars="vertical" />
+                </RelativeLayout>
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"                   
+                    android:layout_margin="5dp"              
+                    android:layout_gravity="center" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_margin="5dp"                        
+                        android:gravity="center_horizontal"
+                        android:paddingRight="120dp"
+                        android:paddingLeft="120dp"
+                        android:orientation="horizontal" >
+
+                        <Button
+                            android:id="@+id/saveme"
+                            style="?android:attr/buttonStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"                      
+                            android:background="@drawable/my_button"
+                            android:drawableTop="@android:drawable/ic_menu_save"
+                            android:onClick="saveToDB"
+                            android:text="@string/save" />
+
+                        <Button
+                            android:id="@+id/android_speak"
+                            style="?android:attr/buttonStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/my_button"
+                            android:drawableTop="@android:drawable/ic_media_play"
+                            android:onClick="speakNow"
+                            android:text="@string/speak" />
+
+                        <Button
+                            android:id="@+id/android_listen"
+                            style="?android:attr/buttonStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/my_button"
+                            android:drawableTop="@android:drawable/ic_btn_speak_now"
+                            android:onClick="listenButtonClicked"
+                            android:text="@string/listen" />
+
+                        <Button
+                            android:id="@+id/clear"
+                            style="?android:attr/buttonStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/my_button"
+                            android:drawableTop="@android:drawable/ic_menu_edit"
+                            android:onClick="clearTextFieldInFocus"
+                            android:text="@string/clear" />
+
+                        <Button
+                            android:id="@+id/translate"
+                            style="?android:attr/buttonStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/my_button"
+                            android:drawableTop="@android:drawable/ic_menu_search"
+                            android:onClick="getTranslation"
+                            android:text="@string/translate" />
+
+                        <ToggleButton
+                            android:id="@+id/keepSttList"
+                            style="?android:attr/buttonStyleSmall"
+                            android:checked="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/my_button"
+                            android:drawableTop="@android:drawable/ic_menu_more"
+                            android:textOn="List ON  " 
+                            android:textOff="List OFF"
+                            android:textSize="12sp"/>
+
+             
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <ListView
+                    android:id="@+id/list"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tab2"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <TextView
+                    android:id="@+id/question"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp" 
+                    android:padding="10dp"
+                    android:layout_below="@id/question" >
+                    
+                    <Button
+                        android:id="@+id/answer1"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true" 
+                                            
+                        android:background="@drawable/save_button"
+                        android:onClick="respondToGuess" />
+
+                    <Button
+                        android:id="@+id/answer2"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"                        
+                        android:layout_alignTop="@id/answer1"        
+                        android:layout_alignParentRight="true"                     
+                        android:background="@drawable/save_button"
+                        android:onClick="respondToGuess" />
+
+                    <Button
+                        android:id="@+id/answer3"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/save_button"
+                        android:layout_alignLeft="@id/answer1"
+                        android:layout_below="@id/answer1"   
+                        android:layout_marginTop="10dp" 
+                        android:onClick="respondToGuess" />
+
+                    <Button
+                        android:id="@+id/answer4"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/answer2"
+                        android:layout_alignTop="@id/answer3"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/save_button"
+                        android:onClick="respondToGuess" />
+
+                    </RelativeLayout>
+                    <TableRow
+                        android:id="@+id/tableRow1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/answer3"
+                        android:layout_below="@id/answer3"
+                        android:layout_margin="15dp"
+                        android:gravity="center"
+                        android:minWidth="800dp" >
+
+                        <Button
+                            android:id="@+id/change"
+                            android:onClick="changeQuestionDirection"
+                            style="?android:attr/buttonStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/my_button"
+                            android:drawableTop="@android:drawable/stat_notify_sync"
+                            android:text="tauschen" />
+
+                        <Button
+                            android:id="@+id/next"
+                            style="?android:attr/buttonStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/my_button"
+                            android:drawableTop="@android:drawable/ic_media_next"
+                            android:onClick="postQuiz"
+                            android:text="weiter" />
+
+                        <Button
+                            android:id="@+id/delete"
+                            style="?android:attr/buttonStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableTop="@android:drawable/ic_input_delete"
+                            android:visibility="gone"
+                            android:text="löschen" />
+                        
+                        
+                    </TableRow>
+                
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</TabHost>

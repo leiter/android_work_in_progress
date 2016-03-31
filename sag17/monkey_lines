@@ -1,0 +1,1 @@
+./adb shell monkey -p com.example.sag17 -v 500 -s 1416912005772

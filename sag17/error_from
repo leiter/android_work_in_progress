@@ -1,0 +1,132 @@
+:Monkey: seed=1416913277454 count=500
+:AllowPackage: com.example.sag17
+:IncludeCategory: android.intent.category.LAUNCHER
+:IncludeCategory: android.intent.category.MONKEY
+// Event percentages:
+//   0: 15.0%
+//   1: 10.0%
+//   2: 2.0%
+//   3: 15.0%
+//   4: -0.0%
+//   5: 25.0%
+//   6: 15.0%
+//   7: 2.0%
+//   8: 2.0%
+//   9: 1.0%
+//   10: 13.0%
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=com.example.sag17/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.example.sag17/.MainActivity } in package com.example.sag17
+    // Rejecting start of Intent { act=android.intent.action.CALL_BUTTON cmp=com.android.contacts/.activities.DialtactsActivity } in package com.android.contacts
+:Sending Touch (ACTION_DOWN): 0:(302.0,424.0)
+:Sending Touch (ACTION_UP): 0:(308.81107,427.28204)
+:Sending Trackball (ACTION_MOVE): 0:(3.0,2.0)
+:Sending Trackball (ACTION_MOVE): 0:(-5.0,3.0)
+:Sending Touch (ACTION_DOWN): 0:(449.0,621.0)
+:Sending Touch (ACTION_UP): 0:(403.65732,605.1682)
+:Sending Touch (ACTION_DOWN): 0:(39.0,527.0)
+:Sending Touch (ACTION_UP): 0:(37.887077,536.7219)
+:Sending Touch (ACTION_DOWN): 0:(211.0,607.0)
+:Sending Touch (ACTION_UP): 0:(215.72485,611.0559)
+:Sending Touch (ACTION_DOWN): 0:(154.0,323.0)
+:Sending Touch (ACTION_UP): 0:(145.92953,320.97577)
+:Sending Trackball (ACTION_MOVE): 0:(2.0,4.0)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=com.example.sag17/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.example.sag17/.MainActivity } in package com.example.sag17
+    //[calendar_time:2014-11-12 21:34:57.337  system_uptime:5116323]
+    // Sending event #100
+    //[calendar_time:2014-11-12 21:34:57.523  system_uptime:5116339]
+    // Sending event #100
+:Sending Touch (ACTION_DOWN): 0:(111.0,54.0)
+:Sending Touch (ACTION_UP): 0:(125.664505,44.498882)
+:Sending Touch (ACTION_DOWN): 0:(118.0,745.0)
+:Sending Touch (ACTION_UP): 0:(116.37029,744.9547)
+:Sending Touch (ACTION_DOWN): 0:(478.0,616.0)
+:Sending Touch (ACTION_UP): 0:(479.5103,613.8077)
+:Sending Touch (ACTION_DOWN): 0:(122.0,349.0)
+:Sending Touch (ACTION_UP): 0:(128.42296,358.60995)
+:Sending Touch (ACTION_DOWN): 0:(128.0,553.0)
+:Sending Touch (ACTION_UP): 0:(119.590164,564.51294)
+:Sending Trackball (ACTION_MOVE): 0:(-5.0,-2.0)
+:Sending Trackball (ACTION_MOVE): 0:(-2.0,4.0)
+:Sending Touch (ACTION_DOWN): 0:(343.0,439.0)
+:Sending Touch (ACTION_UP): 0:(385.1589,434.12762)
+:Sending Touch (ACTION_DOWN): 0:(194.0,153.0)
+:Sending Touch (ACTION_UP): 0:(199.03992,153.2981)
+:Sending Trackball (ACTION_MOVE): 0:(-3.0,-2.0)
+:Sending Trackball (ACTION_MOVE): 0:(0.0,0.0)
+    // Rejecting start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.android.calculator2/.Calculator } in package com.android.calculator2
+:Sending Touch (ACTION_DOWN): 0:(57.0,21.0)
+:Sending Touch (ACTION_UP): 0:(58.825886,17.253208)
+:Sending Trackball (ACTION_MOVE): 0:(0.0,-2.0)
+:Sending Touch (ACTION_DOWN): 0:(241.0,619.0)
+    //[calendar_time:2014-11-12 21:35:15.790  system_uptime:5134600]
+    // Sending event #200
+:Sending Touch (ACTION_UP): 0:(258.58197,576.29504)
+:Sending Trackball (ACTION_MOVE): 0:(-3.0,-4.0)
+:Sending Touch (ACTION_DOWN): 0:(311.0,305.0)
+:Sending Touch (ACTION_UP): 0:(331.47543,329.2031)
+:Sending Touch (ACTION_DOWN): 0:(264.0,75.0)
+:Sending Touch (ACTION_UP): 0:(254.42288,51.637688)
+:Sending Trackball (ACTION_MOVE): 0:(4.0,4.0)
+:Sending Touch (ACTION_DOWN): 0:(418.0,553.0)
+:Sending Touch (ACTION_UP): 0:(441.55072,576.0861)
+:Sending Touch (ACTION_DOWN): 0:(356.0,142.0)
+:Sending Touch (ACTION_UP): 0:(358.67743,135.79652)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=com.example.sag17/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.example.sag17/.MainActivity } in package com.example.sag17
+:Sending Touch (ACTION_DOWN): 0:(329.0,316.0)
+:Sending Touch (ACTION_UP): 0:(321.80948,307.99167)
+:Sending Trackball (ACTION_MOVE): 0:(-3.0,2.0)
+:Sending Touch (ACTION_DOWN): 0:(16.0,116.0)
+:Sending Touch (ACTION_UP): 0:(18.129671,116.70862)
+    //[calendar_time:2014-11-12 21:35:27.260  system_uptime:5146070]
+    // Sending event #300
+    //[calendar_time:2014-11-12 21:35:27.272  system_uptime:5146088]
+    // Sending event #300
+:Sending Trackball (ACTION_MOVE): 0:(0.0,1.0)
+:Sending Touch (ACTION_DOWN): 0:(476.0,252.0)
+:Sending Touch (ACTION_UP): 0:(480.0,219.97464)
+:Sending Touch (ACTION_DOWN): 0:(276.0,12.0)
+:Sending Touch (ACTION_UP): 0:(275.1558,0.086883545)
+:Sending Trackball (ACTION_MOVE): 0:(-4.0,-1.0)
+:Sending Touch (ACTION_DOWN): 0:(267.0,582.0)
+:Sending Touch (ACTION_UP): 0:(288.27216,575.4308)
+:Sending Touch (ACTION_DOWN): 0:(461.0,676.0)
+:Sending Touch (ACTION_UP): 0:(472.20157,695.39795)
+:Sending Trackball (ACTION_MOVE): 0:(-2.0,-4.0)
+:Sending Trackball (ACTION_UP): 0:(0.0,0.0)
+:Sending Trackball (ACTION_MOVE): 0:(1.0,-4.0)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=com.example.sag17/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.example.sag17/.MainActivity } in package com.example.sag17
+:Sending Trackball (ACTION_MOVE): 0:(4.0,-5.0)
+:Sending Touch (ACTION_DOWN): 0:(314.0,794.0)
+:Sending Touch (ACTION_UP): 0:(311.44894,800.0)
+:Sending Trackball (ACTION_MOVE): 0:(-3.0,0.0)
+    //[calendar_time:2014-11-12 21:35:31.214  system_uptime:5150024]
+    // Sending event #400
+    //[calendar_time:2014-11-12 21:35:31.225  system_uptime:5150038]
+    // Sending event #400
+:Sending Trackball (ACTION_MOVE): 0:(3.0,-5.0)
+:Sending Trackball (ACTION_MOVE): 0:(4.0,2.0)
+:Sending Touch (ACTION_DOWN): 0:(2.0,677.0)
+:Sending Touch (ACTION_UP): 0:(19.354378,687.7847)
+:Sending Touch (ACTION_DOWN): 0:(194.0,231.0)
+:Sending Touch (ACTION_UP): 0:(196.57152,228.76843)
+:Sending Touch (ACTION_DOWN): 0:(388.0,552.0)
+:Sending Touch (ACTION_UP): 0:(376.46875,562.37634)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=com.example.sag17/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.example.sag17/.MainActivity } in package com.example.sag17
+:Sending Touch (ACTION_DOWN): 0:(135.0,556.0)
+:Sending Touch (ACTION_UP): 0:(125.23273,544.0894)
+:Sending Trackball (ACTION_MOVE): 0:(-1.0,-5.0)
+:Sending Touch (ACTION_DOWN): 0:(94.0,631.0)
+:Sending Touch (ACTION_UP): 0:(61.205418,643.5475)
+:Sending Trackball (ACTION_MOVE): 0:(3.0,-4.0)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=com.example.sag17/.MainActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.example.sag17/.MainActivity } in package com.example.sag17
+:Sending Trackball (ACTION_MOVE): 0:(-1.0,-5.0)
+Events injected: 500
+:Sending rotation degree=0, persist=false
+:Dropped: keys=1 pointers=0 trackballs=0 flips=0 rotations=0
+## Network stats: elapsed time=56170ms (56170ms mobile, 0ms wifi, 0ms not connected)
+// Monkey finished

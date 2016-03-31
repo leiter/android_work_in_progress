@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="primaryColor">@color/blue</color>
+    <color name="primaryColorDark">@color/mediumBlue</color>
+    <color name="primaryColorText">@color/base</color>
+
+    <color name="textColorBlack">@color/baseBlack</color>
+    <color name="textColorWhite">@color/baseWhite</color>
+    <color name="textColorBlue">@color/baseBlue</color>
+
+    <color name="baseBlack">#dd000000</color>
+    <color name="baseWhite">#ffffff</color>
+    <color name="baseBlue">#4a90e2</color>
+    <color name="baseBlueDarker">#3978c1</color>
+    <color name="baseSilver">#b9b9b9</color>
+
+    <color name="blue">#595a31</color>
+    <color name="mediumBlue">#3978c1</color>
+
+    <color name="base10">#eaeaea</color>
+    <color name="base30">#c1c1c1</color>
+    <color name="base60">#838383</color>
+    <color name="base">#303030</color>
+
+    <color name="red">#d0021b</color>
+    <color name="green">#7ed321</color>
+    <color name="orange">#60ff7d00</color>
+
+    <color name="silverQuarterAlpha">#55b9b9b9</color>
+    <color name="material_light_divider">#DBDBDB</color>
+
+    <color name="toolbar_pressed_bg">#bbffffff</color>
+
+
+
+
+
+</resources>

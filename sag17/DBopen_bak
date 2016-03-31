@@ -1,0 +1,152 @@
+		private static final String TAG = DatabaseOpenHandler.class.getSimpleName();
+		private static final String DATABASE_NAME = "singelwords.db";
+		private static final int DATABASE_VERSION = 1;
+		public static final String _ID = "_id";
+		public static final String TABLE_NAME_WORDS = "words";
+		String TABLE_NAME = "";
+		public static final String TEST_COUNT = "tested";
+		public static final String SUCCESS_COUNT = "success";
+		public ArrayList<String> langsInSession = new ArrayList<String>();
+				
+		private static String TABLE_WORDS_CREATE = "CREATE TABLE IF NOT EXISTS "  // 
+				+ TABLE_NAME_WORDS + " (" + _ID
+				+ " INTEGER PRIMARY KEY AUTOINCREMENT ) ";
+//				+ MOTHER_LANG + " text, "  + FOREING_COLUMN_1  + " text  )";
+		
+		String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS "  // 
+				+ "es_fr" + " ( " + _ID
+				+ " INTEGER PRIMARY KEY AUTOINCREMENT, es text, fr text ); ";
+//				+ MOTHER_LANG + " text, "  + FOREING_COLUMN_1  + " text  )";
+		
+		private static final String TABLE_WORDS_DROP = "DROP TABLE IF EXISTS " + TABLE_NAME_WORDS;
+		
+		DatabaseOpenHandler(Context context) {
+			super(context, DATABASE_NAME, null, DATABASE_VERSION);	}
+		
+		@Override
+		public void onCreate(SQLiteDatabase db) {			
+			Log.d(TAG, "onCreateSQL(): id=" + db + " -> " + TABLE_WORDS_CREATE);
+			
+//			db.execSQL(TABLE_WORDS_CREATE);
+		}
+		
+		public void setTableName(String s) {
+			TABLE_NAME = s;
+		}
+		
+		public void setCreateString() {
+			CREATE_TABLE = String.format(CREATE_TABLE, "es text, fr text" );
+		}
+		
+		public String[] createColumnName () {
+			String[] s = {};
+			s[0] = TEST_COUNT + langsInSession.get(0) + langsInSession.get(1) ;
+			s[1] = SUCCESS_COUNT + langsInSession.get(0) + langsInSession.get(1) ;
+			return s;
+		}
+		
+		public void addLanguageToArr(String loc) {
+			if (! Arrays.asList(langsInSession).contains(loc)) {
+				langsInSession.add(loc);
+				Log.d("DDDBBB", loc + Integer.toString(langsInSession.size()) );			
+			}		
+//			Collections.sort(langsInSession);
+		}
+		
+		public boolean doesColumnExist(String loc) {
+			SQLiteDatabase db = getWritableDatabase();
+			Cursor c = db.rawQuery("select * from " + TABLE_NAME_WORDS + " limit 1", null);
+			String [] r = c.getColumnNames();
+			if (Arrays.asList(r).contains(loc)){
+				return true;
+			}   return false;
+		}
+		
+		public void getTableNames() {
+			SQLiteDatabase db = getWritableDatabase();
+			db.execSQL("SELECT name FROM words.sqlite_master WHERE type='table';");
+		}
+		
+		public void addNewLanguagesCoumn(String loc) {
+			if (!doesColumnExist(loc)){
+			String s = "ALTER TABLE words ADD COLUMN " + loc ;
+			SQLiteDatabase db = getWritableDatabase();
+			db.execSQL(s);}
+		}
+
+
+
+		@Override
+		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+			Log.w(TAG, "Upgrade der Datenbank von Version " + oldVersion + " zu "
+					+ newVersion + "; alle Daten werden gelöscht");
+			db.execSQL(TABLE_WORDS_DROP);
+			onCreate(db);
+		}
+
+		public void insert(String mother_lang, String foreing_lang) {
+			long rowId = -1;
+			try {				
+				SQLiteDatabase db = getWritableDatabase();
+				ContentValues values = new ContentValues();			
+				values.put(langsInSession.get(0), mother_lang);
+				values.put(langsInSession.get(1), foreing_lang);
+				rowId = db.insert(TABLE_NAME_WORDS, null, values);							
+			} catch (SQLiteException e) {
+				Log.e(TAG, "insert()", e);
+			} finally {
+				Log.d(TAG, "insert(): rowId=" + rowId);
+			}
+		}
+		
+		
+		
+		public void createTableAndOrInsert(ArrayList<LanguageModel> l, String mother_lang, String foreing_lang) {
+			long rowId = -1;
+			
+			SQLiteDatabase db = getWritableDatabase();
+			db.execSQL(CREATE_TABLE);
+			try {				
+				db = getWritableDatabase();
+				ContentValues values = new ContentValues();			
+				values.put(l.get(0).getLanguageCode(), mother_lang);		 // langsInSession.get(0)
+				values.put(l.get(1).getLanguageCode(), foreing_lang);		//  langsInSession.get(1)
+				rowId = db.insert(TABLE_NAME_WORDS, null, values);							
+			} catch (SQLiteException e) {
+				Log.e(TAG, "insert()", e);
+			} finally {
+				Log.d(TAG, "insert(): rowId=" + rowId);
+			}
+		}
+
+		public Cursor query() {
+			SQLiteDatabase db = getWritableDatabase();
+			return db.query(TABLE_NAME_WORDS, null, null, null, null, null, null);  //  langsInSession.get(1) + " DESC"  last one
+		}
+		
+		public Cursor getQuizCursor() {
+			SQLiteDatabase db = getWritableDatabase();
+			return db.rawQuery("SELECT * FROM items ORDER BY id ASC LIMIT 4", null);
+		}
+		
+		public String[][] getQuizVolume () {
+			SQLiteDatabase db = getWritableDatabase();
+			Cursor cursor = db.query(TABLE_NAME_WORDS, null, null, null, null, null,
+					langsInSession.get(0) + " DESC");
+			if(cursor.getCount() > 3)  {
+	            String[][] str = new String[cursor.getCount()][2];
+	            int i = 0;	 
+	            while (cursor.moveToNext()) {
+	                 str[i][0] = cursor.getString(cursor.getColumnIndex(langsInSession.get(1)));
+	                 str[i][1] = cursor.getString(cursor.getColumnIndex(langsInSession.get(0))) ;	                 
+	                 i++;
+	             }      return str;
+	        }   else  { return new String[][] {}; }  // null;
+	    }
+
+		public void delete(long id) {			
+			SQLiteDatabase db = getWritableDatabase();
+			int numDeleted = db.delete(TABLE_NAME_WORDS, _ID + " = ?",
+					new String[] { Long.toString(id) });
+			Log.d(TAG, "delete(): id=" + id + " -> " + numDeleted);
+		}
